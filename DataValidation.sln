@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2024
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImpruvIT.DataValidation", "src\Core\ImpruvIT.DataValidation.csproj", "{E0F159D6-BD97-458B-8DEA-815FBFDAA407}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImpruvIT.DataValidation.UnitTests", "tests\Core\ImpruvIT.DataValidation.UnitTests.csproj", "{B20B55A8-C0E3-48EF-AEB3-E61A0A27E14A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E0F159D6-BD97-458B-8DEA-815FBFDAA407}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0F159D6-BD97-458B-8DEA-815FBFDAA407}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0F159D6-BD97-458B-8DEA-815FBFDAA407}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0F159D6-BD97-458B-8DEA-815FBFDAA407}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B20B55A8-C0E3-48EF-AEB3-E61A0A27E14A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B20B55A8-C0E3-48EF-AEB3-E61A0A27E14A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B20B55A8-C0E3-48EF-AEB3-E61A0A27E14A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B20B55A8-C0E3-48EF-AEB3-E61A0A27E14A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1CE126AF-9871-423E-B000-6561DD3C2496}
+	EndGlobalSection
+EndGlobal
