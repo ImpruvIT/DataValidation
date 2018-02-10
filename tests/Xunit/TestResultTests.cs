@@ -16,8 +16,9 @@ namespace ImpruvIT.DataValidation.Xunit.UnitTests
             var actual = TestResult.Suppose<object>(null);
 
             // Assert
-            actual.Suppose().NotToBeNull();
-            Assert.IsAssignableFrom<TestResultExpectation<object>>(actual);
+            actual.Suppose()
+                .NotToBeNull()
+                .ToBeInstanceOf(typeof(TestResultExpectation<object>));
             actual.Value.Suppose().ToBeNull();
             actual.Name.Suppose().ToBeNull();
         }
@@ -32,8 +33,9 @@ namespace ImpruvIT.DataValidation.Xunit.UnitTests
             var actual = TestResult.Suppose<object>(arg);
 
             // Assert
-            actual.Suppose().NotToBeNull();
-            Assert.IsAssignableFrom<TestResultExpectation<object>>(actual);
+            actual.Suppose()
+                .NotToBeNull()
+                .ToBeInstanceOf(typeof(TestResultExpectation<object>));
             actual.Value.Suppose().ToBeSameAs(arg);
             actual.Name.Suppose().ToBeNull();
         }
@@ -49,8 +51,9 @@ namespace ImpruvIT.DataValidation.Xunit.UnitTests
             var actual = TestResult.Suppose<object>(value, valueName);
 
             // Assert
-            actual.Suppose().NotToBeNull();
-            Assert.IsAssignableFrom<TestResultExpectation<object>>(actual);
+            actual.Suppose()
+                .NotToBeNull()
+                .ToBeInstanceOf(typeof(TestResultExpectation<object>));
             actual.Value.Suppose().ToBeSameAs(value);
             actual.Name.Suppose().ToBeEqualTo(valueName);
         }

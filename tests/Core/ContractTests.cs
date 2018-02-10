@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using ImpruvIT.DataValidators.Xunit;
 using Xunit;
 
 namespace ImpruvIT.DataValidation.UnitTests
@@ -14,10 +14,11 @@ namespace ImpruvIT.DataValidation.UnitTests
             var actual = Contract.Requires.Argument<object>(null, null);
 
             // Assert
-            Assert.NotNull(actual);
-            Assert.IsAssignableFrom<ArgumentValueExpectation<object>>(actual);
-            Assert.Null(actual.Value);
-            Assert.Null(actual.Name);
+            actual.Suppose()
+                .NotToBeNull()
+                .ToBeInstanceOf(typeof(ArgumentValueExpectation<object>));
+            actual.Value.Suppose().ToBeNull();
+            actual.Name.Suppose().ToBeNull();
         }
 
         [Fact]
@@ -31,10 +32,11 @@ namespace ImpruvIT.DataValidation.UnitTests
             var actual = Contract.Requires.Argument(arg, argName);
 
             // Assert
-            Assert.NotNull(actual);
-            Assert.IsAssignableFrom<ArgumentValueExpectation<object>>(actual);
-            Assert.Equal(arg, actual.Value);
-            Assert.Equal(argName, actual.Name);
+            actual.Suppose()
+                .NotToBeNull()
+                .ToBeInstanceOf(typeof(ArgumentValueExpectation<object>));
+            actual.Value.Suppose().ToBeEqualTo(arg);
+            actual.Name.Suppose().ToBeEqualTo(argName);
         }
 
         [Fact]
@@ -44,10 +46,11 @@ namespace ImpruvIT.DataValidation.UnitTests
             var actual = Contract.RequiresArgument<object>(null, null);
 
             // Assert
-            Assert.NotNull(actual);
-            Assert.IsAssignableFrom<ArgumentValueExpectation<object>>(actual);
-            Assert.Null(actual.Value);
-            Assert.Null(actual.Name);
+            actual.Suppose()
+                .NotToBeNull()
+                .ToBeInstanceOf(typeof(ArgumentValueExpectation<object>));
+            actual.Value.Suppose().ToBeNull();
+            actual.Name.Suppose().ToBeNull();
         }
 
         [Fact]
@@ -61,10 +64,11 @@ namespace ImpruvIT.DataValidation.UnitTests
             var actual = Contract.RequiresArgument(arg, argName);
 
             // Assert
-            Assert.NotNull(actual);
-            Assert.IsAssignableFrom<ArgumentValueExpectation<object>>(actual);
-            Assert.Equal(arg, actual.Value);
-            Assert.Equal(argName, actual.Name);
+            actual.Suppose()
+                .NotToBeNull()
+                .ToBeInstanceOf(typeof(ArgumentValueExpectation<object>));
+            actual.Value.Suppose().ToBeEqualTo(arg);
+            actual.Name.Suppose().ToBeEqualTo(argName);
         }
 
         [Fact]
@@ -74,10 +78,11 @@ namespace ImpruvIT.DataValidation.UnitTests
             var actual = Contract.Ensures.ReturnValue<object>(null);
 
             // Assert
-            Assert.NotNull(actual);
-            Assert.IsAssignableFrom<ReturnValueExpectation<object>>(actual);
-            Assert.Null(actual.Value);
-            Assert.Equal(nameof(this.Ensures_ReturnValue_WithoutValueAndName_CreatesReturnValueExpectation), actual.Name);
+            actual.Suppose()
+                .NotToBeNull()
+                .ToBeInstanceOf(typeof(ReturnValueExpectation<object>));
+            actual.Value.Suppose().ToBeNull();
+            actual.Name.Suppose().ToBeEqualTo(nameof(this.Ensures_ReturnValue_WithoutValueAndName_CreatesReturnValueExpectation));
         }
 
         [Fact]
@@ -91,10 +96,11 @@ namespace ImpruvIT.DataValidation.UnitTests
             var actual = Contract.Ensures.ReturnValue(arg, methodName);
 
             // Assert
-            Assert.NotNull(actual);
-            Assert.IsAssignableFrom<ReturnValueExpectation<object>>(actual);
-            Assert.Equal(arg, actual.Value);
-            Assert.Equal(methodName, actual.Name);
+            actual.Suppose()
+                .NotToBeNull()
+                .ToBeInstanceOf(typeof(ReturnValueExpectation<object>));
+            actual.Value.Suppose().ToBeEqualTo(arg);
+            actual.Name.Suppose().ToBeEqualTo(methodName);
         }
 
         [Fact]
@@ -104,10 +110,11 @@ namespace ImpruvIT.DataValidation.UnitTests
             var actual = Contract.EnsuresReturnValue<object>(null);
 
             // Assert
-            Assert.NotNull(actual);
-            Assert.IsAssignableFrom<ReturnValueExpectation<object>>(actual);
-            Assert.Null(actual.Value);
-            Assert.Equal(nameof(this.EnsuresReturnValue_WithoutValueAndName_CreatesReturnValueExpectation), actual.Name);
+            actual.Suppose()
+                .NotToBeNull()
+                .ToBeInstanceOf(typeof(ReturnValueExpectation<object>));
+            actual.Value.Suppose().ToBeNull();
+            actual.Name.Suppose().ToBeEqualTo(nameof(this.EnsuresReturnValue_WithoutValueAndName_CreatesReturnValueExpectation));
         }
 
         [Fact]
@@ -121,10 +128,11 @@ namespace ImpruvIT.DataValidation.UnitTests
             var actual = Contract.EnsuresReturnValue(arg, methodName);
 
             // Assert
-            Assert.NotNull(actual);
-            Assert.IsAssignableFrom<ReturnValueExpectation<object>>(actual);
-            Assert.Equal(arg, actual.Value);
-            Assert.Equal(methodName, actual.Name);
+            actual.Suppose()
+                .NotToBeNull()
+                .ToBeInstanceOf(typeof(ReturnValueExpectation<object>));
+            actual.Value.Suppose().ToBeEqualTo(arg);
+            actual.Name.Suppose().ToBeEqualTo(methodName);
         }
     }
 }
