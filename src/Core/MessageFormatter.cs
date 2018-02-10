@@ -9,7 +9,7 @@ namespace ImpruvIT.DataValidation
     {
         public static string Format(string template, params object[] args)
         {
-            return string.Format(CultureInfo.CurrentCulture, template, args.Select(MessageFormatter.FormatValue)).Trim();
+            return string.Format(CultureInfo.CurrentCulture, template, args.Select(MessageFormatter.FormatValue).ToArray<object>()).Trim();
         }
 
         public static string FormatValue(object value)
@@ -22,7 +22,7 @@ namespace ImpruvIT.DataValidation
             if (string.IsNullOrWhiteSpace(reason))
                 return string.Empty;
 
-            reason = string.Format(CultureInfo.CurrentCulture, reason, reasonArgs.Select(MessageFormatter.FormatValue)).Trim();
+            reason = string.Format(CultureInfo.CurrentCulture, reason, reasonArgs.Select(MessageFormatter.FormatValue).ToArray<object>()).Trim();
             if (reason.StartsWith("because"))
                 return " " + reason;
             else
