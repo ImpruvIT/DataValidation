@@ -25,18 +25,6 @@ namespace ImpruvIT.DataValidation
         /// <inheritdoc />
         public T Value { get; }
 
-        /// <inheritdoc />
-        public void HandleMissingValue(string message)
-        {
-            throw new InvalidOperationException($"The parameter '{this.Name}' was expected {message} but was not.");
-        }
-
-        /// <inheritdoc />
-        public void HandleValueMismatch(string expectedValue, string actualValue, string message)
-        {
-            throw new InvalidOperationException($"The parameter '{this.Name}' was expected {message} but was not.");
-        }
-
 
         /// <inheritdoc />
         public void HandleMissingValue(string expectedValue, string actualValue, string reason, params object[] reasonArgs)

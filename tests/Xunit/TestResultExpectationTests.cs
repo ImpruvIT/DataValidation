@@ -130,11 +130,6 @@ namespace ImpruvIT.DataValidation.Xunit.UnitTests
             return new TestResultExpectation<object>(null, string.Empty);
         }
 
-        private TestResultExpectation<T> CreateTestee<T>(T value)
-        {
-            return new TestResultExpectation<T>(value, string.Empty);
-        }
-
         private static string FormatReason(string reason, object[] reasonArgs)
         {
             return string.Format(CultureInfo.CurrentCulture, reason, reasonArgs);

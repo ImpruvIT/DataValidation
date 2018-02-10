@@ -1,22 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
-
-using Xunit;
-
 using ImpruvIT.DataValidators.Xunit;
+using Xunit;
+using Xunit.Sdk;
 
 namespace ImpruvIT.DataValidation.UnitTests
 {
-    public class ArgumentValueExpectationTests
+    public class ReturnValueExpectationTests
     {
-        private const string ParamName = "any param";
+        private const string MethodName = "any param";
 
         [Fact]
         public void Ctor_WithoutValueAndName_InitializesInstance()
         {
             // Act
-            var actual = new ArgumentValueExpectation<object>(null, null);
+            var actual = new ReturnValueExpectation<object>(null, null);
 
             // Assert
             actual.Value.Suppose().ToBeNull();
@@ -29,14 +28,14 @@ namespace ImpruvIT.DataValidation.UnitTests
         {
             // Arrange
             var value = new object();
-            var valueName = "any name";
+            var methodName = "any name";
 
             // Act
-            var actual = new ArgumentValueExpectation<object>(value, valueName);
+            var actual = new ReturnValueExpectation<object>(value, methodName);
 
             // Assert
             actual.Value.Suppose().ToBeEqualTo(value);
-            actual.Name.Suppose().ToBeEqualTo(valueName);
+            actual.Name.Suppose().ToBeEqualTo(methodName);
         }
 
         [Fact]
@@ -54,9 +53,10 @@ namespace ImpruvIT.DataValidation.UnitTests
             Action action = () => testee.HandleMissingValue(expectedExpectedValue, expectedActualValue, expectedReason, expectedReasonArgs);
 
             // Assert
-            var exception = Assert.Throws<ArgumentNullException>(action);
+            var exception = Assert.Throws<InvalidOperationException>(action);
 
-            exception.ParamName.Suppose().ToBeEqualTo(ParamName);
+            Assert.Contains(expectedExpectedValue, exception.Message);
+            Assert.Contains(expectedActualValue, exception.Message);
             Assert.Contains(FormatReason(expectedReason, expectedReasonArgs), exception.Message);
         }
 
@@ -75,16 +75,16 @@ namespace ImpruvIT.DataValidation.UnitTests
             Action action = () => testee.HandleValueMismatch(expectedExpectedValue, expectedActualValue, expectedReason, expectedReasonArgs);
 
             // Assert
-            var exception = Assert.Throws<ArgumentOutOfRangeException>(action);
+            var exception = Assert.Throws<InvalidOperationException>(action);
 
-            exception.ParamName.Suppose().ToBeEqualTo(ParamName);
-            exception.ActualValue.Suppose().ToBeSameAs(testee.Value);
+            Assert.Contains(expectedExpectedValue, exception.Message);
+            Assert.Contains(expectedActualValue, exception.Message);
             Assert.Contains(FormatReason(expectedReason, expectedReasonArgs), exception.Message);
         }
 
-        private ArgumentValueExpectation<object> CreateTestee()
+        private ReturnValueExpectation<object> CreateTestee()
         {
-            return new ArgumentValueExpectation<object>(new object(), ParamName);
+            return new ReturnValueExpectation<object>(new object(), MethodName);
         }
 
         private static string FormatReason(string reason, object[] reasonArgs)
