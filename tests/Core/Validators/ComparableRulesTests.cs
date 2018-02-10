@@ -8,11 +8,8 @@ using ImpruvIT.DataValidators.Xunit;
 
 namespace ImpruvIT.DataValidation.UnitTests
 {
-    public class ComparableRulesTests
+    public class ComparableRulesTests : RulesTestsBase
     {
-        private static readonly string CustomReason = "any reason";
-        private static readonly object[] CustomReasonArgs = { 1, null, "any value" };
-
         [Fact]
         public void ToBeNegative_WithPositiveValue_ReportsValueMismatch()
         {
@@ -23,8 +20,8 @@ namespace ImpruvIT.DataValidation.UnitTests
             var returnValue = validatorMock.Object.ToBeNegative(CustomReason, CustomReasonArgs);
 
             // Assert
-            validatorMock.Verify(x => x.HandleValueMismatch(It.IsAny<string>(), It.IsAny<string>(), CustomReason, CustomReasonArgs), Times.Once);
-            validatorMock.Verify(x => x.HandleMissingValue(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()), Times.Never);
+            VerifyMissingValueNotHandled(validatorMock);
+            VerifyValueMismatchHandled(validatorMock);
             returnValue.Suppose().ToBeSameAs(validatorMock.Object);
         }
 
@@ -38,8 +35,8 @@ namespace ImpruvIT.DataValidation.UnitTests
             var returnValue = validatorMock.Object.ToBeNegative(CustomReason, CustomReasonArgs);
 
             // Assert
-            validatorMock.Verify(x => x.HandleValueMismatch(It.IsAny<string>(), It.IsAny<string>(), CustomReason, CustomReasonArgs), Times.Once);
-            validatorMock.Verify(x => x.HandleMissingValue(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()), Times.Never);
+            VerifyMissingValueNotHandled(validatorMock);
+            VerifyValueMismatchHandled(validatorMock);
             returnValue.Suppose().ToBeSameAs(validatorMock.Object);
         }
 
@@ -53,8 +50,8 @@ namespace ImpruvIT.DataValidation.UnitTests
             var returnValue = validatorMock.Object.ToBeNegative(CustomReason, CustomReasonArgs);
 
             // Assert
-            validatorMock.Verify(x => x.HandleValueMismatch(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()), Times.Never);
-            validatorMock.Verify(x => x.HandleMissingValue(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()), Times.Never);
+            VerifyMissingValueNotHandled(validatorMock);
+            VerifyValueMismatchNotHandled(validatorMock);
             returnValue.Suppose().ToBeSameAs(validatorMock.Object);
         }
 
@@ -68,8 +65,8 @@ namespace ImpruvIT.DataValidation.UnitTests
             var returnValue = validatorMock.Object.NotToBePositive(CustomReason, CustomReasonArgs);
 
             // Assert
-            validatorMock.Verify(x => x.HandleValueMismatch(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()), Times.Never);
-            validatorMock.Verify(x => x.HandleMissingValue(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()), Times.Never);
+            VerifyMissingValueNotHandled(validatorMock);
+            VerifyValueMismatchNotHandled(validatorMock);
             returnValue.Suppose().ToBeSameAs(validatorMock.Object);
         }
 
@@ -83,8 +80,8 @@ namespace ImpruvIT.DataValidation.UnitTests
             var returnValue = validatorMock.Object.NotToBePositive(CustomReason, CustomReasonArgs);
 
             // Assert
-            validatorMock.Verify(x => x.HandleValueMismatch(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()), Times.Never);
-            validatorMock.Verify(x => x.HandleMissingValue(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()), Times.Never);
+            VerifyMissingValueNotHandled(validatorMock);
+            VerifyValueMismatchNotHandled(validatorMock);
             returnValue.Suppose().ToBeSameAs(validatorMock.Object);
         }
 
@@ -98,8 +95,8 @@ namespace ImpruvIT.DataValidation.UnitTests
             var returnValue = validatorMock.Object.NotToBePositive(CustomReason, CustomReasonArgs);
 
             // Assert
-            validatorMock.Verify(x => x.HandleValueMismatch(It.IsAny<string>(), It.IsAny<string>(), CustomReason, CustomReasonArgs), Times.Once);
-            validatorMock.Verify(x => x.HandleMissingValue(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()), Times.Never);
+            VerifyMissingValueNotHandled(validatorMock);
+            VerifyValueMismatchHandled(validatorMock);
             returnValue.Suppose().ToBeSameAs(validatorMock.Object);
         }
 
@@ -113,8 +110,8 @@ namespace ImpruvIT.DataValidation.UnitTests
             var returnValue = validatorMock.Object.NotToBeNegative(CustomReason, CustomReasonArgs);
 
             // Assert
-            validatorMock.Verify(x => x.HandleValueMismatch(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()), Times.Never);
-            validatorMock.Verify(x => x.HandleMissingValue(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()), Times.Never);
+            VerifyMissingValueNotHandled(validatorMock);
+            VerifyValueMismatchNotHandled(validatorMock);
             returnValue.Suppose().ToBeSameAs(validatorMock.Object);
         }
 
@@ -128,8 +125,8 @@ namespace ImpruvIT.DataValidation.UnitTests
             var returnValue = validatorMock.Object.NotToBeNegative(CustomReason, CustomReasonArgs);
 
             // Assert
-            validatorMock.Verify(x => x.HandleValueMismatch(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()), Times.Never);
-            validatorMock.Verify(x => x.HandleMissingValue(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()), Times.Never);
+            VerifyMissingValueNotHandled(validatorMock);
+            VerifyValueMismatchNotHandled(validatorMock);
             returnValue.Suppose().ToBeSameAs(validatorMock.Object);
         }
 
@@ -143,8 +140,8 @@ namespace ImpruvIT.DataValidation.UnitTests
             var returnValue = validatorMock.Object.NotToBeNegative(CustomReason, CustomReasonArgs);
 
             // Assert
-            validatorMock.Verify(x => x.HandleValueMismatch(It.IsAny<string>(), It.IsAny<string>(), CustomReason, CustomReasonArgs), Times.Once);
-            validatorMock.Verify(x => x.HandleMissingValue(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()), Times.Never);
+            VerifyMissingValueNotHandled(validatorMock);
+            VerifyValueMismatchHandled(validatorMock);
             returnValue.Suppose().ToBeSameAs(validatorMock.Object);
         }
 
@@ -158,8 +155,8 @@ namespace ImpruvIT.DataValidation.UnitTests
             var returnValue = validatorMock.Object.ToBePositive(CustomReason, CustomReasonArgs);
 
             // Assert
-            validatorMock.Verify(x => x.HandleValueMismatch(It.IsAny<string>(), It.IsAny<string>(), CustomReason, CustomReasonArgs), Times.Once);
-            validatorMock.Verify(x => x.HandleMissingValue(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()), Times.Never);
+            VerifyMissingValueNotHandled(validatorMock);
+            VerifyValueMismatchHandled(validatorMock);
             returnValue.Suppose().ToBeSameAs(validatorMock.Object);
         }
 
@@ -173,8 +170,8 @@ namespace ImpruvIT.DataValidation.UnitTests
             var returnValue = validatorMock.Object.ToBePositive(CustomReason, CustomReasonArgs);
 
             // Assert
-            validatorMock.Verify(x => x.HandleValueMismatch(It.IsAny<string>(), It.IsAny<string>(), CustomReason, CustomReasonArgs), Times.Once);
-            validatorMock.Verify(x => x.HandleMissingValue(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()), Times.Never);
+            VerifyMissingValueNotHandled(validatorMock);
+            VerifyValueMismatchHandled(validatorMock);
             returnValue.Suppose().ToBeSameAs(validatorMock.Object);
         }
 
@@ -188,8 +185,8 @@ namespace ImpruvIT.DataValidation.UnitTests
             var returnValue = validatorMock.Object.ToBePositive(CustomReason, CustomReasonArgs);
 
             // Assert
-            validatorMock.Verify(x => x.HandleValueMismatch(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()), Times.Never);
-            validatorMock.Verify(x => x.HandleMissingValue(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()), Times.Never);
+            VerifyMissingValueNotHandled(validatorMock);
+            VerifyValueMismatchNotHandled(validatorMock);
             returnValue.Suppose().ToBeSameAs(validatorMock.Object);
         }
 
@@ -203,8 +200,8 @@ namespace ImpruvIT.DataValidation.UnitTests
             var returnValue = validatorMock.Object.ToBeMoreThan(new ComparableObject(1), CustomReason, CustomReasonArgs);
 
             // Assert
-            validatorMock.Verify(x => x.HandleValueMismatch(It.IsAny<string>(), It.IsAny<string>(), CustomReason, CustomReasonArgs), Times.Once);
-            validatorMock.Verify(x => x.HandleMissingValue(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()), Times.Never);
+            VerifyMissingValueNotHandled(validatorMock);
+            VerifyValueMismatchHandled(validatorMock);
             returnValue.Suppose().ToBeSameAs(validatorMock.Object);
         }
 
@@ -218,8 +215,8 @@ namespace ImpruvIT.DataValidation.UnitTests
             var returnValue = validatorMock.Object.ToBeMoreThan(new ComparableObject(0), CustomReason, CustomReasonArgs);
 
             // Assert
-            validatorMock.Verify(x => x.HandleValueMismatch(It.IsAny<string>(), It.IsAny<string>(), CustomReason, CustomReasonArgs), Times.Once);
-            validatorMock.Verify(x => x.HandleMissingValue(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()), Times.Never);
+            VerifyMissingValueNotHandled(validatorMock);
+            VerifyValueMismatchHandled(validatorMock);
             returnValue.Suppose().ToBeSameAs(validatorMock.Object);
         }
 
@@ -233,8 +230,8 @@ namespace ImpruvIT.DataValidation.UnitTests
             var returnValue = validatorMock.Object.ToBeMoreThan(new ComparableObject(-1), CustomReason, CustomReasonArgs);
 
             // Assert
-            validatorMock.Verify(x => x.HandleValueMismatch(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()), Times.Never);
-            validatorMock.Verify(x => x.HandleMissingValue(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()), Times.Never);
+            VerifyMissingValueNotHandled(validatorMock);
+            VerifyValueMismatchNotHandled(validatorMock);
             returnValue.Suppose().ToBeSameAs(validatorMock.Object);
         }
 
@@ -248,8 +245,8 @@ namespace ImpruvIT.DataValidation.UnitTests
             var returnValue = validatorMock.Object.ToBeMoreThan(new NonComparableObject(1), new NonComparableObjectComparer(), CustomReason, CustomReasonArgs);
 
             // Assert
-            validatorMock.Verify(x => x.HandleValueMismatch(It.IsAny<string>(), It.IsAny<string>(), CustomReason, CustomReasonArgs), Times.Once);
-            validatorMock.Verify(x => x.HandleMissingValue(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()), Times.Never);
+            VerifyMissingValueNotHandled(validatorMock);
+            VerifyValueMismatchHandled(validatorMock);
             returnValue.Suppose().ToBeSameAs(validatorMock.Object);
         }
 
@@ -263,8 +260,8 @@ namespace ImpruvIT.DataValidation.UnitTests
             var returnValue = validatorMock.Object.ToBeMoreThan(new NonComparableObject(0), new NonComparableObjectComparer(), CustomReason, CustomReasonArgs);
 
             // Assert
-            validatorMock.Verify(x => x.HandleValueMismatch(It.IsAny<string>(), It.IsAny<string>(), CustomReason, CustomReasonArgs), Times.Once);
-            validatorMock.Verify(x => x.HandleMissingValue(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()), Times.Never);
+            VerifyMissingValueNotHandled(validatorMock);
+            VerifyValueMismatchHandled(validatorMock);
             returnValue.Suppose().ToBeSameAs(validatorMock.Object);
         }
 
@@ -278,8 +275,8 @@ namespace ImpruvIT.DataValidation.UnitTests
             var returnValue = validatorMock.Object.ToBeMoreThan(new NonComparableObject(-1), new NonComparableObjectComparer(), CustomReason, CustomReasonArgs);
 
             // Assert
-            validatorMock.Verify(x => x.HandleValueMismatch(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()), Times.Never);
-            validatorMock.Verify(x => x.HandleMissingValue(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()), Times.Never);
+            VerifyMissingValueNotHandled(validatorMock);
+            VerifyValueMismatchNotHandled(validatorMock);
             returnValue.Suppose().ToBeSameAs(validatorMock.Object);
         }
 
@@ -293,8 +290,8 @@ namespace ImpruvIT.DataValidation.UnitTests
             var returnValue = validatorMock.Object.ToBeMoreThan(new ComparableObject(1), CustomReason, CustomReasonArgs);
 
             // Assert
-            validatorMock.Verify(x => x.HandleValueMismatch(It.IsAny<string>(), It.IsAny<string>(), CustomReason, CustomReasonArgs), Times.Once);
-            validatorMock.Verify(x => x.HandleMissingValue(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()), Times.Never);
+            VerifyMissingValueNotHandled(validatorMock);
+            VerifyValueMismatchHandled(validatorMock);
             returnValue.Suppose().ToBeSameAs(validatorMock.Object);
         }
 
@@ -308,8 +305,8 @@ namespace ImpruvIT.DataValidation.UnitTests
             var returnValue = validatorMock.Object.ToBeMoreThan(new ComparableObject(0), CustomReason, CustomReasonArgs);
 
             // Assert
-            validatorMock.Verify(x => x.HandleValueMismatch(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()), Times.Never);
-            validatorMock.Verify(x => x.HandleMissingValue(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()), Times.Never);
+            VerifyMissingValueNotHandled(validatorMock);
+            VerifyValueMismatchNotHandled(validatorMock);
             returnValue.Suppose().ToBeSameAs(validatorMock.Object);
         }
 
@@ -323,8 +320,8 @@ namespace ImpruvIT.DataValidation.UnitTests
             var returnValue = validatorMock.Object.ToBeMoreThan(new ComparableObject(-1), CustomReason, CustomReasonArgs);
 
             // Assert
-            validatorMock.Verify(x => x.HandleValueMismatch(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()), Times.Never);
-            validatorMock.Verify(x => x.HandleMissingValue(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()), Times.Never);
+            VerifyMissingValueNotHandled(validatorMock);
+            VerifyValueMismatchNotHandled(validatorMock);
             returnValue.Suppose().ToBeSameAs(validatorMock.Object);
         }
 
@@ -338,8 +335,8 @@ namespace ImpruvIT.DataValidation.UnitTests
             var returnValue = validatorMock.Object.ToBeMoreThan(new NonComparableObject(1), new NonComparableObjectComparer(), CustomReason, CustomReasonArgs);
 
             // Assert
-            validatorMock.Verify(x => x.HandleValueMismatch(It.IsAny<string>(), It.IsAny<string>(), CustomReason, CustomReasonArgs), Times.Once);
-            validatorMock.Verify(x => x.HandleMissingValue(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()), Times.Never);
+            VerifyMissingValueNotHandled(validatorMock);
+            VerifyValueMismatchHandled(validatorMock);
             returnValue.Suppose().ToBeSameAs(validatorMock.Object);
         }
 
@@ -353,8 +350,8 @@ namespace ImpruvIT.DataValidation.UnitTests
             var returnValue = validatorMock.Object.ToBeMoreThan(new NonComparableObject(0), new NonComparableObjectComparer(), CustomReason, CustomReasonArgs);
 
             // Assert
-            validatorMock.Verify(x => x.HandleValueMismatch(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()), Times.Never);
-            validatorMock.Verify(x => x.HandleMissingValue(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()), Times.Never);
+            VerifyMissingValueNotHandled(validatorMock);
+            VerifyValueMismatchNotHandled(validatorMock);
             returnValue.Suppose().ToBeSameAs(validatorMock.Object);
         }
 
@@ -368,8 +365,8 @@ namespace ImpruvIT.DataValidation.UnitTests
             var returnValue = validatorMock.Object.ToBeMoreThan(new NonComparableObject(-1), new NonComparableObjectComparer(), CustomReason, CustomReasonArgs);
 
             // Assert
-            validatorMock.Verify(x => x.HandleValueMismatch(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()), Times.Never);
-            validatorMock.Verify(x => x.HandleMissingValue(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()), Times.Never);
+            VerifyMissingValueNotHandled(validatorMock);
+            VerifyValueMismatchNotHandled(validatorMock);
             returnValue.Suppose().ToBeSameAs(validatorMock.Object);
         }
 
@@ -383,8 +380,8 @@ namespace ImpruvIT.DataValidation.UnitTests
             var returnValue = validatorMock.Object.ToBeLessOrEqualThan(new ComparableObject(-1), CustomReason, CustomReasonArgs);
 
             // Assert
-            validatorMock.Verify(x => x.HandleValueMismatch(It.IsAny<string>(), It.IsAny<string>(), CustomReason, CustomReasonArgs), Times.Once);
-            validatorMock.Verify(x => x.HandleMissingValue(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()), Times.Never);
+            VerifyMissingValueNotHandled(validatorMock);
+            VerifyValueMismatchHandled(validatorMock);
             returnValue.Suppose().ToBeSameAs(validatorMock.Object);
         }
 
@@ -398,8 +395,8 @@ namespace ImpruvIT.DataValidation.UnitTests
             var returnValue = validatorMock.Object.ToBeLessOrEqualThan(new ComparableObject(0), CustomReason, CustomReasonArgs);
 
             // Assert
-            validatorMock.Verify(x => x.HandleValueMismatch(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()), Times.Never);
-            validatorMock.Verify(x => x.HandleMissingValue(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()), Times.Never);
+            VerifyMissingValueNotHandled(validatorMock);
+            VerifyValueMismatchNotHandled(validatorMock);
             returnValue.Suppose().ToBeSameAs(validatorMock.Object);
         }
 
@@ -413,8 +410,8 @@ namespace ImpruvIT.DataValidation.UnitTests
             var returnValue = validatorMock.Object.ToBeLessOrEqualThan(new ComparableObject(1), CustomReason, CustomReasonArgs);
 
             // Assert
-            validatorMock.Verify(x => x.HandleValueMismatch(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()), Times.Never);
-            validatorMock.Verify(x => x.HandleMissingValue(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()), Times.Never);
+            VerifyMissingValueNotHandled(validatorMock);
+            VerifyValueMismatchNotHandled(validatorMock);
             returnValue.Suppose().ToBeSameAs(validatorMock.Object);
         }
 
@@ -428,8 +425,8 @@ namespace ImpruvIT.DataValidation.UnitTests
             var returnValue = validatorMock.Object.ToBeLessOrEqualThan(new NonComparableObject(-1), new NonComparableObjectComparer(), CustomReason, CustomReasonArgs);
 
             // Assert
-            validatorMock.Verify(x => x.HandleValueMismatch(It.IsAny<string>(), It.IsAny<string>(), CustomReason, CustomReasonArgs), Times.Once);
-            validatorMock.Verify(x => x.HandleMissingValue(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()), Times.Never);
+            VerifyMissingValueNotHandled(validatorMock);
+            VerifyValueMismatchHandled(validatorMock);
             returnValue.Suppose().ToBeSameAs(validatorMock.Object);
         }
 
@@ -443,8 +440,8 @@ namespace ImpruvIT.DataValidation.UnitTests
             var returnValue = validatorMock.Object.ToBeLessOrEqualThan(new NonComparableObject(0), new NonComparableObjectComparer(), CustomReason, CustomReasonArgs);
 
             // Assert
-            validatorMock.Verify(x => x.HandleValueMismatch(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()), Times.Never);
-            validatorMock.Verify(x => x.HandleMissingValue(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()), Times.Never);
+            VerifyMissingValueNotHandled(validatorMock);
+            VerifyValueMismatchNotHandled(validatorMock);
             returnValue.Suppose().ToBeSameAs(validatorMock.Object);
         }
 
@@ -458,8 +455,8 @@ namespace ImpruvIT.DataValidation.UnitTests
             var returnValue = validatorMock.Object.ToBeLessOrEqualThan(new NonComparableObject(1), new NonComparableObjectComparer(), CustomReason, CustomReasonArgs);
 
             // Assert
-            validatorMock.Verify(x => x.HandleValueMismatch(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()), Times.Never);
-            validatorMock.Verify(x => x.HandleMissingValue(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()), Times.Never);
+            VerifyMissingValueNotHandled(validatorMock);
+            VerifyValueMismatchNotHandled(validatorMock);
             returnValue.Suppose().ToBeSameAs(validatorMock.Object);
         }
 
@@ -473,8 +470,8 @@ namespace ImpruvIT.DataValidation.UnitTests
             var returnValue = validatorMock.Object.ToBeLessThan(new ComparableObject(-1), CustomReason, CustomReasonArgs);
 
             // Assert
-            validatorMock.Verify(x => x.HandleValueMismatch(It.IsAny<string>(), It.IsAny<string>(), CustomReason, CustomReasonArgs), Times.Once);
-            validatorMock.Verify(x => x.HandleMissingValue(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()), Times.Never);
+            VerifyMissingValueNotHandled(validatorMock);
+            VerifyValueMismatchHandled(validatorMock);
             returnValue.Suppose().ToBeSameAs(validatorMock.Object);
         }
 
@@ -488,8 +485,8 @@ namespace ImpruvIT.DataValidation.UnitTests
             var returnValue = validatorMock.Object.ToBeLessThan(new ComparableObject(0), CustomReason, CustomReasonArgs);
 
             // Assert
-            validatorMock.Verify(x => x.HandleValueMismatch(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()), Times.Never);
-            validatorMock.Verify(x => x.HandleMissingValue(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()), Times.Never);
+            VerifyMissingValueNotHandled(validatorMock);
+            VerifyValueMismatchNotHandled(validatorMock);
             returnValue.Suppose().ToBeSameAs(validatorMock.Object);
         }
 
@@ -503,8 +500,8 @@ namespace ImpruvIT.DataValidation.UnitTests
             var returnValue = validatorMock.Object.ToBeLessThan(new ComparableObject(1), CustomReason, CustomReasonArgs);
 
             // Assert
-            validatorMock.Verify(x => x.HandleValueMismatch(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()), Times.Never);
-            validatorMock.Verify(x => x.HandleMissingValue(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()), Times.Never);
+            VerifyMissingValueNotHandled(validatorMock);
+            VerifyValueMismatchNotHandled(validatorMock);
             returnValue.Suppose().ToBeSameAs(validatorMock.Object);
         }
 
@@ -518,8 +515,8 @@ namespace ImpruvIT.DataValidation.UnitTests
             var returnValue = validatorMock.Object.ToBeLessThan(new NonComparableObject(-1), new NonComparableObjectComparer(), CustomReason, CustomReasonArgs);
 
             // Assert
-            validatorMock.Verify(x => x.HandleValueMismatch(It.IsAny<string>(), It.IsAny<string>(), CustomReason, CustomReasonArgs), Times.Once);
-            validatorMock.Verify(x => x.HandleMissingValue(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()), Times.Never);
+            VerifyMissingValueNotHandled(validatorMock);
+            VerifyValueMismatchHandled(validatorMock);
             returnValue.Suppose().ToBeSameAs(validatorMock.Object);
         }
 
@@ -533,8 +530,8 @@ namespace ImpruvIT.DataValidation.UnitTests
             var returnValue = validatorMock.Object.ToBeLessThan(new NonComparableObject(0), new NonComparableObjectComparer(), CustomReason, CustomReasonArgs);
 
             // Assert
-            validatorMock.Verify(x => x.HandleValueMismatch(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()), Times.Never);
-            validatorMock.Verify(x => x.HandleMissingValue(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()), Times.Never);
+            VerifyMissingValueNotHandled(validatorMock);
+            VerifyValueMismatchNotHandled(validatorMock);
             returnValue.Suppose().ToBeSameAs(validatorMock.Object);
         }
 
@@ -548,17 +545,9 @@ namespace ImpruvIT.DataValidation.UnitTests
             var returnValue = validatorMock.Object.ToBeLessThan(new NonComparableObject(1), new NonComparableObjectComparer(), CustomReason, CustomReasonArgs);
 
             // Assert
-            validatorMock.Verify(x => x.HandleValueMismatch(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()), Times.Never);
-            validatorMock.Verify(x => x.HandleMissingValue(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()), Times.Never);
+            VerifyMissingValueNotHandled(validatorMock);
+            VerifyValueMismatchNotHandled(validatorMock);
             returnValue.Suppose().ToBeSameAs(validatorMock.Object);
-        }
-
-        private Mock<IValidateValue<T>> CreateValidatorMock<T>(T value, string name = "")
-        {
-            var expectationMock = new Mock<IValidateValue<T>>();
-            expectationMock.Setup(x => x.Value).Returns(value);
-            expectationMock.Setup(x => x.Name).Returns(name);
-            return expectationMock;
         }
         
         public class ComparableObject : IComparable<ComparableObject>
