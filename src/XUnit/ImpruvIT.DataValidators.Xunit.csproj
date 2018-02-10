@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.1</TargetFramework>
+    <AssemblyName>ImpruvIT.DataValidators.Xunit</AssemblyName>
+    <RootNamespace>ImpruvIT.DataValidators.Xunit</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="xunit.assert" Version="2.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Core\ImpruvIT.DataValidation.csproj" />
+  </ItemGroup>
+
+</Project>

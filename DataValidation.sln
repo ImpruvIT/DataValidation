@@ -1,11 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27130.2024
+VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImpruvIT.DataValidation", "src\Core\ImpruvIT.DataValidation.csproj", "{E0F159D6-BD97-458B-8DEA-815FBFDAA407}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImpruvIT.DataValidation.UnitTests", "tests\Core\ImpruvIT.DataValidation.UnitTests.csproj", "{B20B55A8-C0E3-48EF-AEB3-E61A0A27E14A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImpruvIT.DataValidators.Xunit", "src\XUnit\ImpruvIT.DataValidators.Xunit.csproj", "{9486547B-E98E-4C4E-A8C4-B431CA389896}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Xunit", "Xunit", "{F7BFBF09-32D8-46A0-B3A2-41EE6E30876D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImpruvIT.DataValidation.Xunit.UnitTests", "tests\Xunit\ImpruvIT.DataValidation.Xunit.UnitTests.csproj", "{B088DFE5-B2EC-47EA-BA5C-8B9ACF6907F3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,9 +27,21 @@ Global
 		{B20B55A8-C0E3-48EF-AEB3-E61A0A27E14A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B20B55A8-C0E3-48EF-AEB3-E61A0A27E14A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B20B55A8-C0E3-48EF-AEB3-E61A0A27E14A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9486547B-E98E-4C4E-A8C4-B431CA389896}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9486547B-E98E-4C4E-A8C4-B431CA389896}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9486547B-E98E-4C4E-A8C4-B431CA389896}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9486547B-E98E-4C4E-A8C4-B431CA389896}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B088DFE5-B2EC-47EA-BA5C-8B9ACF6907F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B088DFE5-B2EC-47EA-BA5C-8B9ACF6907F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B088DFE5-B2EC-47EA-BA5C-8B9ACF6907F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B088DFE5-B2EC-47EA-BA5C-8B9ACF6907F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9486547B-E98E-4C4E-A8C4-B431CA389896} = {F7BFBF09-32D8-46A0-B3A2-41EE6E30876D}
+		{B088DFE5-B2EC-47EA-BA5C-8B9ACF6907F3} = {F7BFBF09-32D8-46A0-B3A2-41EE6E30876D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1CE126AF-9871-423E-B000-6561DD3C2496}
