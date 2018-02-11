@@ -20,7 +20,7 @@ var packagesDir = outputDir.Combine(Directory("packages"));
 
 var solution = rootDir.CombineWithFilePath(File("DataValidation.sln"));
 
-var productVersion = "0.1.0";
+var productVersion = "0.2.0";
 var buildVersion = productVersion + ".0";
 if (AppVeyor.IsRunningOnAppVeyor)
 {
