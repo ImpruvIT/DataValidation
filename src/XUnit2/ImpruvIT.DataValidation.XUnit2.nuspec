@@ -18,6 +18,7 @@
     <releaseNotes></releaseNotes>
     <dependencies>
       <group>
+        <dependency id="ImpruvIT.DataValidation" version="0.1.0" />
         <dependency id="xunit.assert" version="2.3.1" />
       </group>
       <group targetFramework=".NETStandard2.0" />

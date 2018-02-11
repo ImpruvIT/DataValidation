@@ -56,5 +56,8 @@
       <Name>ImpruvIT.DataValidation</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="ImpruvIT.DataValidation.MSTest.nuspec" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

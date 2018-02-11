@@ -17,6 +17,7 @@
     <tags>TDD BDD fluent netcore netstandard MSTest</tags>
     <releaseNotes></releaseNotes>
     <dependencies>
+      <dependency id="ImpruvIT.DataValidation" version="0.1.0" /> 
     </dependencies>
   </metadata>
     <files>
