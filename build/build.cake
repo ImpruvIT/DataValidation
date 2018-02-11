@@ -81,9 +81,31 @@ Task("UnitTests")
     .IsDependentOn("Build")
     .Does(() =>
 {
-    //var projects = GetFiles(rootDir + "/tests/**/bin/" + configuration + "/*/*.UnitTests.dll");
-    var projects = GetFiles(rootDir + "/tests/**/*.UnitTests.csproj");
-    foreach(var project in projects)
+    CreateDirectory(testResultsDir);
+
+    var msTestTests = new FilePath[]
+    {
+        rootDir.CombineWithFilePath("tests/MSTest/bin/" + configuration + "/ImpruvIT.DataValidation.MSTest.UnitTests.dll"),
+    };
+    var xUnitTests = new FilePath[]
+    {
+        rootDir.CombineWithFilePath("tests/Core/ImpruvIT.DataValidation.UnitTests.csproj"),
+        rootDir.CombineWithFilePath("tests/XUnit2/ImpruvIT.DataValidation.XUnit2.UnitTests.csproj"),
+    };
+
+    MSTest(msTestTests, new MSTestSettings
+    {
+        //ResultsFile = testResultsDir.CombineWithFilePath("MSTest.testresults").ToString(),
+    });
+
+    /* VSTest(vsTestTests, new VSTestSettings
+    {
+        FrameworkVersion = VSTestFrameworkVersion.NET45,
+        Logger = AppVeyor.IsRunningOnAppVeyor ? "AppVeyor" : "trx",
+        //ResultsFile = testResultsDir.CombineWithFilePath("MSTest.testresults").ToString(),
+    }); */
+
+    foreach(var project in xUnitTests)
     {
         Information("Running tests: " + project);
         DotNetCoreTool(project, "test",  "--no-restore --no-build --configuration " + configuration + " --results-directory " + testResultsDir);
