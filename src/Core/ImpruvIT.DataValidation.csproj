@@ -1,6 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <AssemblyName>ImpruvIT.DataValidation</AssemblyName>
     <RootNamespace>ImpruvIT.DataValidation</RootNamespace>
     <TargetFrameworks>netstandard1.0;netstandard2.0</TargetFrameworks>
@@ -24,4 +25,8 @@
     <PackageVersion>0.1.128</PackageVersion>
     <Version>0.1.0</Version>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\..\GlobalAssemblyInfo.cs" Link="Properties\GlobalAssemblyInfo.cs" />
+  </ItemGroup>
 </Project>

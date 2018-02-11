@@ -97,7 +97,8 @@ Task("PackNuGet")
     var nuSpecs = new FilePath[]
     {
         rootDir.CombineWithFilePath(File("src/Core/ImpruvIT.DataValidation.nuspec")),
-        rootDir.CombineWithFilePath(File("src/XUnit2/ImpruvIT.DataValidation.Xunit2.nuspec"))
+        rootDir.CombineWithFilePath(File("src/XUnit2/ImpruvIT.DataValidation.Xunit2.nuspec")),
+        rootDir.CombineWithFilePath(File("src/MSTest/ImpruvIT.DataValidation.MSTest.nuspec")),
     };
 
     foreach (var nuSpec in nuSpecs)

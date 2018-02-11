@@ -1,6 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+
     <AssemblyName>ImpruvIT.DataValidation.XUnit2</AssemblyName>
     <RootNamespace>ImpruvIT.DataValidation.XUnit2</RootNamespace>
     <TargetFrameworks>netstandard1.1;netstandard2.0</TargetFrameworks>
@@ -13,7 +15,7 @@
     <Description>
       A xUnit.net 2 support for ImpruvIT.DataValidation library.
       ImpruvIT.DataValidation is a simple easily extensible data validation library with fluent API and descriptive failure messages. Supports validation of code contracts (arguments and return values) and test assertions with the same API but different exception types and messages.
-</Description>
+    </Description>
     <PackageProjectUrl>https://github.com/ImpruvIT/DataValidation</PackageProjectUrl>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <Company>ImpruvIT</Company>
@@ -26,6 +28,10 @@
     <FileVersion>0.1.0.256</FileVersion>
     <PackageVersion>0.1.128</PackageVersion>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\..\GlobalAssemblyInfo.cs" Link="Properties\GlobalAssemblyInfo.cs" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="xunit.assert" Version="2.3.1" />

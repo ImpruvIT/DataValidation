@@ -4,11 +4,15 @@
     <id>ImpruvIT.DataValidation.XUnit2</id>
     <version>$version$</version>
     <title>Fluent data validation</title>
+    <summary>A xUnit.net 2 plugin for ImpruvIT.DataValidation library.</summary>
     <authors>Andrej Burger</authors>
     <owners>Dietatko</owners>
     <projectUrl>https://github.com/ImpruvIT/DataValidation</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>A simple easily extensible data validation library with fluent API and descriptive failure messages. Supports validation of code contracts (arguments and return values) and test assertions with the same API but different exception types and messages.</description>
+    <description>
+        A xUnit.net 2 support for ImpruvIT.DataValidation library.
+        ImpruvIT.DataValidation is a simple easily extensible data validation library with fluent API and descriptive failure messages. Supports validation of code contracts (arguments and return values) and test assertions with the same API but different exception types and messages.
+    </description>
     <copyright>© 2018 Andrej Burger</copyright>
     <tags>TDD BDD fluent netcore netstandard xUnit2</tags>
     <releaseNotes></releaseNotes>
