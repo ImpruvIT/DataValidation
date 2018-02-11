@@ -96,6 +96,7 @@ if(!$PSScriptRoot){
     $PSScriptRoot = Split-Path $MyInvocation.MyCommand.Path -Parent
 }
 
+$Script = Join-Path $PSScriptRoot "build.cake"
 $TOOLS_DIR = Join-Path $PSScriptRoot "tools"
 $ADDINS_DIR = Join-Path $TOOLS_DIR "Addins"
 $MODULES_DIR = Join-Path $TOOLS_DIR "Modules"
