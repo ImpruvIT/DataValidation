@@ -7,11 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImpruvIT.DataValidation", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImpruvIT.DataValidation.UnitTests", "tests\Core\ImpruvIT.DataValidation.UnitTests.csproj", "{B20B55A8-C0E3-48EF-AEB3-E61A0A27E14A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImpruvIT.DataValidators.Xunit", "src\XUnit\ImpruvIT.DataValidators.Xunit.csproj", "{9486547B-E98E-4C4E-A8C4-B431CA389896}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImpruvIT.DataValidation.XUnit2", "src\XUnit2\ImpruvIT.DataValidation.XUnit2.csproj", "{9486547B-E98E-4C4E-A8C4-B431CA389896}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Xunit", "Xunit", "{F7BFBF09-32D8-46A0-B3A2-41EE6E30876D}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "xUnit2", "xUnit2", "{F7BFBF09-32D8-46A0-B3A2-41EE6E30876D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImpruvIT.DataValidation.Xunit.UnitTests", "tests\Xunit\ImpruvIT.DataValidation.Xunit.UnitTests.csproj", "{B088DFE5-B2EC-47EA-BA5C-8B9ACF6907F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImpruvIT.DataValidation.XUnit2.UnitTests", "tests\XUnit2\ImpruvIT.DataValidation.XUnit2.UnitTests.csproj", "{B088DFE5-B2EC-47EA-BA5C-8B9ACF6907F3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

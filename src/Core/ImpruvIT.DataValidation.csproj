@@ -1,11 +1,27 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <Authors>Andrej Burger</Authors>
-    <Company>ImpruvIT</Company>
-    <AssemblyVersion>0.1.0.0</AssemblyVersion>
-    <FileVersion>0.1.0.0</FileVersion>
-  </PropertyGroup>
+    <AssemblyName>ImpruvIT.DataValidation</AssemblyName>
+    <RootNamespace>ImpruvIT.DataValidation</RootNamespace>
+    <TargetFrameworks>netstandard1.0;netstandard2.0</TargetFrameworks>
 
+    <Product>ImpruvIT.DataValidation</Product>
+
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <PackageId>ImpruvIT.DataValidation</PackageId>
+    <Title>Fluent data validation</Title>
+    <Description>A simple easily extensible data validation library with fluent API and descriptive failure messages. Supports validation of code contracts (arguments and return values) and test assertions with the same API but different exception types and messages.</Description>
+    <PackageProjectUrl>https://github.com/ImpruvIT/DataValidation</PackageProjectUrl>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <Company>ImpruvIT</Company>
+    <Copyright>© 2018 Andrej Burger</Copyright>
+    <Authors>Andrej Burger</Authors>
+    <PackageTags>TDD BDD fluent netcore netstandard xUnit2</PackageTags>
+    <RepositoryUrl>https://github.com/ImpruvIT/DataValidation</RepositoryUrl>
+    
+    <AssemblyVersion>0.1.0</AssemblyVersion>
+    <FileVersion>0.1.0.256</FileVersion>
+    <PackageVersion>0.1.128</PackageVersion>
+    <Version>0.1.0</Version>
+  </PropertyGroup>
 </Project>

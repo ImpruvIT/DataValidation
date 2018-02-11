@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-using ImpruvIT.DataValidation;
-
-namespace ImpruvIT.DataValidators.Xunit
+namespace ImpruvIT.DataValidation.XUnit2
 {
     public static class TestResult
     {

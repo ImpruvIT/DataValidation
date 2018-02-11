@@ -4,6 +4,10 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
 
     <IsPackable>false</IsPackable>
+
+    <AssemblyName>ImpruvIT.DataValidation.XUnit2.UnitTests</AssemblyName>
+
+    <RootNamespace>ImpruvIT.DataValidation.XUnit2.UnitTests</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -15,7 +19,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\Core\ImpruvIT.DataValidation.csproj" />
-    <ProjectReference Include="..\..\src\XUnit\ImpruvIT.DataValidators.Xunit.csproj" />
+    <ProjectReference Include="..\..\src\XUnit2\ImpruvIT.DataValidation.XUnit2.csproj" />
   </ItemGroup>
 
 </Project>

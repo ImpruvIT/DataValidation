@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
-using Xunit;
 
-using ImpruvIT.DataValidators.Xunit;
+using Xunit;
 using Xunit.Sdk;
 
-namespace ImpruvIT.DataValidation.Xunit.UnitTests
+namespace ImpruvIT.DataValidation.XUnit2.UnitTests
 {
     public class TestResultExpectationTests
     {

@@ -20,7 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\Core\ImpruvIT.DataValidation.csproj" />
-    <ProjectReference Include="..\..\src\XUnit\ImpruvIT.DataValidators.Xunit.csproj" />
+    <ProjectReference Include="..\..\src\XUnit2\ImpruvIT.DataValidation.XUnit2.csproj" />
   </ItemGroup>
 
 </Project>

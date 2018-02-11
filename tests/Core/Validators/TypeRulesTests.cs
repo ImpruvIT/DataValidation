@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 using Xunit;
 
-using ImpruvIT.DataValidators.Xunit;
+using ImpruvIT.DataValidation.XUnit2;
 
 namespace ImpruvIT.DataValidation.UnitTests
 {
