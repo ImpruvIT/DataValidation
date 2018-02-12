@@ -87,6 +87,11 @@ Task("UnitTests")
     {
         rootDir.CombineWithFilePath("tests/MSTest/bin/" + configuration + "/ImpruvIT.DataValidation.MSTest.UnitTests.dll"),
     };
+    var msTest2Tests = new FilePath[]
+    {
+        rootDir.CombineWithFilePath("tests/MSTest2/ImpruvIT.DataValidation.MSTest2.UnitTests.csproj"),
+        rootDir.CombineWithFilePath("tests/XUnit2/ImpruvIT.DataValidation.XUnit2.UnitTests.csproj"),
+    };
     var xUnitTests = new FilePath[]
     {
         rootDir.CombineWithFilePath("tests/Core/ImpruvIT.DataValidation.UnitTests.csproj"),
@@ -105,7 +110,7 @@ Task("UnitTests")
         //ResultsFile = testResultsDir.CombineWithFilePath("MSTest.testresults").ToString(),
     }); */
 
-    foreach(var project in xUnitTests)
+    foreach(var project in xUnitTests.Concat(msTest2Tests))
     {
         Information("Running tests: " + project);
         DotNetCoreTool(project, "test",  "--no-restore --no-build --configuration " + configuration + " --results-directory " + testResultsDir);
@@ -121,6 +126,7 @@ Task("PackNuGet")
         rootDir.CombineWithFilePath(File("src/Core/ImpruvIT.DataValidation.nuspec")),
         rootDir.CombineWithFilePath(File("src/XUnit2/ImpruvIT.DataValidation.Xunit2.nuspec")),
         rootDir.CombineWithFilePath(File("src/MSTest/ImpruvIT.DataValidation.MSTest.nuspec")),
+        rootDir.CombineWithFilePath(File("src/MSTest2/ImpruvIT.DataValidation.MSTest2.nuspec")),
     };
 
     foreach (var nuSpec in nuSpecs)

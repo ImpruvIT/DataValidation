@@ -1,27 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>ImpruvIT.DataValidation.MSTest</id>
+    <id>ImpruvIT.DataValidation.MSTest2</id>
     <version>$version$</version>
     <title>Fluent data validation</title>
-    <summary>A MSTest 1 plugin for ImpruvIT.DataValidation library.</summary>
+    <summary>A MSTest 2 plugin for ImpruvIT.DataValidation library.</summary>
     <authors>Andrej Burger</authors>
     <owners>Dietatko</owners>
     <projectUrl>https://github.com/ImpruvIT/DataValidation</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>
-        A MSTest 1 support for ImpruvIT.DataValidation library.
+        A MSTest 2 support for ImpruvIT.DataValidation library.
         ImpruvIT.DataValidation is a simple easily extensible data validation library with fluent API and descriptive failure messages. Supports validation of code contracts (arguments and return values) and test assertions with the same API but different exception types and messages.A simple easily extensible data validation library with fluent API and descriptive failure messages. Supports validation of code contracts (arguments and return values) and test assertions with the same API but different exception types and messages.
     </description>
     <copyright>© 2018 Andrej Burger</copyright>
-    <tags>TDD BDD fluent netcore netstandard MSTest</tags>
+    <tags>TDD BDD fluent netcore netstandard MSTest2</tags>
     <releaseNotes></releaseNotes>
     <dependencies>
-      <dependency id="ImpruvIT.DataValidation" version="0.1.0" /> 
     </dependencies>
   </metadata>
   <files>
-    <file src="ImpruvIT.DataValidation.MSTest.dll" target="lib\net461" />
-    <file src="ImpruvIT.DataValidation.MSTest.pdb" target="lib\net461" />
+    <file src="netstandard1.1\ImpruvIT.DataValidation.MSTest2.dll" target="lib\netstandard1.1" />
+    <file src="netstandard1.1\ImpruvIT.DataValidation.MSTest2.pdb" target="lib\netstandard1.1" />
+
+    <file src="netstandard2.0\ImpruvIT.DataValidation.MSTest2.dll" target="lib\netstandard2.0" />
+    <file src="netstandard2.0\ImpruvIT.DataValidation.MSTest2.pdb" target="lib\netstandard2.0" />
   </files>
 </package>
